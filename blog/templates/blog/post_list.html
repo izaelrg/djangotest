@@ -6,5 +6,14 @@
 </head>
 <body>
     <h4>Hello, World! 👨🏻‍💻</h4>
+    {% for post in posts %}
+        <div>
+            <p>Publicado: {{ post.published_date }}</p>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+            <br />
+        </div>
+    {% endfor %}
+
 </body>
 </html>
