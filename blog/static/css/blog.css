@@ -1,3 +1,10 @@
 h1 a, h2 a {
     color: lightcoral;
 }
+
+.post__detail {
+    background: lightcoral;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 10px 10px 24px 0px rgba(0,0,0,0.35);
+}
