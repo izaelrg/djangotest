@@ -9,6 +9,9 @@
                             {{ post.published_date }}
                         </div>
                     {% endif %}
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'post_edit' pk=post.pk %}">📝 Edit Post</a>
+                    {% endif %}
                     <h2 class="mt-5">{{ post.title }}</h2>
                     <p>{{ post.text|linebreaksbr }}</p>
                 </div>

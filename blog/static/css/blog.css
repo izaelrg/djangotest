@@ -2,9 +2,37 @@ h1 a, h2 a {
     color: lightcoral;
 }
 
+.welcome {
+    font-size: 3rem;
+}
+
+.welcome__profile {
+    text-align: right;
+}
+
 .post__detail {
     background: lightcoral;
     padding: 2rem;
     border-radius: 1rem;
     box-shadow: 10px 10px 24px 0px rgba(0,0,0,0.35);
+}
+
+.post-form label {
+    display: block;
+}
+
+.post-form input {
+    width: 336px;
+    border-radius: .5rem;
+    border: solid 1px lightgreen;
+    padding: .5rem;
+    outline: none;
+}
+
+.post-form textarea {
+    width: 336px;
+    border-radius: .5rem;
+    border: solid 1px lightgreen;
+    padding: .5rem;
+    outline: none;
 }
