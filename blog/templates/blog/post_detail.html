@@ -8,9 +8,12 @@
                         <div class="small">
                             {{ post.published_date }}
                         </div>
+                    {% else %}
+                        <a href="{% url 'post_publish' pk=post.pk %}">⚡️ Publish</a>
                     {% endif %}
                     {% if user.is_authenticated %}
                         <a href="{% url 'post_edit' pk=post.pk %}">📝 Edit Post</a>
+                        <a href="{% url 'post_remove' pk=post.pk %}">❌ Delete Post</a>
                     {% endif %}
                     <h2 class="mt-5">{{ post.title }}</h2>
                     <p>{{ post.text|linebreaksbr }}</p>

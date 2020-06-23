@@ -13,7 +13,8 @@
         <div class="welcome__profile">
             <h4>Hello, World! 🧑🏻‍🚀</h4>
             {% if user.is_authenticated %}
-                <a href="{% url 'post_new' %}">+ New Post</a>
+                <a href="{% url 'post_new' %}">+ New Post</a><br />
+                <a href="{% url 'post_draft_list' %}">+ Publish Post</a>
             {% endif %}
         </div>
     </div>
