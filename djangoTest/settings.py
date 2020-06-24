@@ -25,7 +25,7 @@ SECRET_KEY = 'ui_3$tp-(!w#0%4z55=k+zaexp0v&md7ob1*273axph-n(!2j('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.pythonanywhere.com']
 
 
 # Application definition
@@ -79,8 +79,12 @@ WSGI_APPLICATION = 'djangoTest.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'djangotest',
+        'USER': 'izaelrg',
+        'PASSWORD': 'izaDB',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
