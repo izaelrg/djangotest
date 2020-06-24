@@ -53,6 +53,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'djangoTest.urls'
+LOGIN_REDIRECT_URL = '/'
 
 TEMPLATES = [
     {
