@@ -17,6 +17,26 @@
                     {% endif %}
                     <h2 class="mt-5">{{ post.title }}</h2>
                     <p>{{ post.text|linebreaksbr }}</p>
+
+                    <hr class="mt-5">
+                    <a class="btn btn-success mb-5" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
+                        {% for comment in post.comments.all %}
+                            {% if user.is_authenticated or comment.approved_comment %}
+                                <div class="card p-3 mb-3">
+                                    <div class="small text-secondary">{{ comment.created_date }}</div>
+                                    {% if not comment.approved_comment %}
+                                        <div class="d-inline mt-2 mb-4">
+                                            <a class="mr-2" href="{% url 'comment_remove' pk=comment.pk %}">❌</a>
+                                            <a href="{% url 'comment_approve' pk=comment.pk %}">✅</a>
+                                        </div>
+                                    {% endif %}
+                                    <strong>{{ comment.author }}</strong>
+                                    <p>{{ comment.text|linebreaks }}</p>
+                                </div>
+                            {% endif %}
+                        {% empty %}
+                            <p>No comments here yet :(</p>
+                        {% endfor %}
                 </div>
             </div>
         </div>
